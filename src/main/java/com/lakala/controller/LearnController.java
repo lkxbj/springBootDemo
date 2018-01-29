@@ -8,6 +8,7 @@ import com.lakala.util.ServletUtil;
 import com.lakala.util.StringUtil;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -127,18 +128,52 @@ public class LearnController {
             jo.put("message","作者不能为空");
             jo.put("flag",false);
             ServletUtil.createSuccessResponse(200,jo,response);
+            return;
         }
         if(StringUtil.isNull(title)){
             jo.put("message","标题不能为空");
             jo.put("flag",false);
             ServletUtil.createSuccessResponse(200,jo,response);
+            return;
         }
         if(StringUtil.isNull(url)){
             jo.put("message","地址不能为空");
             jo.put("flag",false);
             ServletUtil.createSuccessResponse(200,jo,response);
+            return;
+        }
+        learnResouce.setAuthor(author);
+        learnResouce.setTitle(title);
+        learnResouce.setUrl(url);
+        int index = learnService.update(learnResouce);
+        if(index>0){
+            jo.put("message","信息修改成功");
+            jo.put("flag",true);
+        }else{
+            jo.put("message","信息修改失败");
+            jo.put("flag",false);
         }
         ServletUtil.createSuccessResponse(200,jo,response);
     }
 
+    /**
+     * <p>Title: ${enclosing_method}</p>
+     * <p>Description: 删除</p>
+     * ${tags} return
+     */
+    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    @ResponseBody
+    public void deleteLearn(HttpServletRequest request,HttpServletResponse response){
+        String ids = request.getParameter("ids");
+        JSONObject object = new JSONObject();
+        int index = learnService.deleteByIds(ids);
+        if(index>0){
+            object.put("message","删除成功");
+            object.put("flag",true);
+        }else{
+            object.put("message","删除失败");
+            object.put("flag",false);
+        }
+        ServletUtil.createSuccessResponse(200,object,response);
+    }
 }
