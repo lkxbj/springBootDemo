@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Learn Resource</title>
+</head>
+<body>
+    <div style="text-align: center;margin: 0 auto;width: 1000px">
+        <h1>学习资源大奉送</h1>
+        <table width="100%" border="1" cellpadding="0" cellspacing="1">
+            <tr>
+                <td>作者</td>
+                <td>标题</td>
+                <td>链接</td>
+            </tr>
+            <!--/*@thymesVar id="learnResourceList" type=""*/-->
+            <tr th:each="learn : ${learnResourceList}">
+                <td th:text="${learn.author}">嘟嘟MD</td>
+                <td th:text="${learn.title}">SpringBoot干货系列</td>
+                <td><a th:href="${learn.url}" target="_blank">点我</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
