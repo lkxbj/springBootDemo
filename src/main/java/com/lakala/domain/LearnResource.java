@@ -1,12 +1,11 @@
 package com.lakala.domain;
 
 /**
- * <p>Title: chapter1</p>
- *
+ * <p>Title: LearnResource</p>
  * @author lixiaojie lixiaojie@lakala.com
  * @version V1.0
  * @Package com.lakala.domain
- * <p>Description: ${todo}</p>
+ * <p>Description: 资料实体类</p>
  * @date 2018/1/19 10:57
  */
 

@@ -10,12 +10,11 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 
 /**
- * <p>Title: ${FILE_NAME}</p>
- *
+ * <p>Title: LearnServiceImpl</p>
  * @author lixiaojie lixiaojie@lakala.com
  * @version V1.0
  * @Package com.lakala.service.impl
- * <p>Description: ${todo}</p>
+ * <p>Description: 资料业务逻辑实现类</p>
  * @date 2018/1/25 10:02
  */
 @Service

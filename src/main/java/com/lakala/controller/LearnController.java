@@ -19,8 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <p>Title: ${FILE_NAME}</p>
- *
+ * <p>Title: LearnController</p>
  * @author lixiaojie lixiaojie@lakala.com
  * @version V1.0
  * @Package com.lakala.controller
@@ -113,7 +112,7 @@ public class LearnController {
     }
 
     /**
-     * <p>Title: ${enclosing_method}</p>
+     * <p>Title: updateLearn</p>
      * <p>Description: 修改</p>
      * ${tags} return
      */
@@ -157,7 +156,7 @@ public class LearnController {
     }
 
     /**
-     * <p>Title: ${enclosing_method}</p>
+     * <p>Title: deleteLearn</p>
      * <p>Description: 删除</p>
      * ${tags} return
      */

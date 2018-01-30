@@ -12,12 +12,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <p>Title: ${FILE_NAME}</p>
- *
+ * <p>Title: LearnDaoImpl</p>
  * @author lixiaojie lixiaojie@lakala.com
  * @version V1.0
  * @Package com.lakala.dao.impl
- * <p>Description: ${todo}</p>
+ * <p>Description: 资料信息接口实现</p>
  * @date 2018/1/24 16:27
  */
 @Repository
@@ -41,7 +40,7 @@ public class LearnDaoImpl implements LearnDao{
     }
 
     /**
-     * <p>Title: ${enclosing_method}</p>
+     * <p>Title: queryLearnResourceById</p>
      * <p>Description: 通过Id查询</p>
      * ${tags} return LearnResouce
      */
@@ -56,16 +55,31 @@ public class LearnDaoImpl implements LearnDao{
         }
     }
 
+    /**
+     * <p>Title: add</p>
+     * <p>Description: 添加</p>
+     * ${tags} return int
+     */
     @Override
     public int add(LearnResource learnResource) {
         return jdbcTemplate.update("insert into learn_resource(author, title,url) values(?, ?, ?)",learnResource.getAuthor(),learnResource.getTitle(),learnResource.getUrl());
     }
 
+    /**
+     * <p>Title: update</p>
+     * <p>Description: 更新</p>
+     * ${tags} return int
+     */
     @Override
     public int update(LearnResource learnResource) {
         return jdbcTemplate.update("update learn_resource set author=?,title=?,url=? where id = ?",new Object[]{learnResource.getAuthor(),learnResource.getTitle(),learnResource.getUrl(),learnResource.getId()});
     }
 
+    /**
+     * <p>Title: deleteByIds</p>
+     * <p>Description: 删除</p>
+     * ${tags} return int
+     */
     @Override
     public int deleteByIds(String ids) {
         return jdbcTemplate.update("delete from learn_resource where id in("+ids+")");

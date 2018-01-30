@@ -4,8 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * <p>Title: ${FILE_NAME}</p>
- *
+ * <p>Title: StringUtil</p>
  * @author lixiaojie lixiaojie@lakala.com
  * @version V1.0
  * @Package com.lakala.util
@@ -15,9 +14,9 @@ import java.util.regex.Pattern;
 public class StringUtil {
 
     /**
-     * <p>Title: ${enclosing_method}</p>
+     * <p>Title: isNull</p>
      * <p>Description: 判断字符串是否为null、“ ”、“null”</p>
-     * ${tags} boolean
+     * ${tags} return boolean
      */
     public static boolean isNull(String obj) {
         if (obj == null){
@@ -31,9 +30,9 @@ public class StringUtil {
     }
 
     /**
-     * <p>Title: ${enclosing_method}</p>
+     * <p>Title: isNumber</p>
      * <p>Description: 正则验证是否是数字</p>
-     * ${tags} boolean
+     * ${tags} return boolean
      */
     public static boolean isNumber(String str) {
         Pattern pattern = Pattern.compile("[+-]?[0-9]+[0-9]*(\\.[0-9]+)?");
@@ -42,7 +41,7 @@ public class StringUtil {
     }
 
     /**
-     * <p>Title: ${enclosing_method}</p>
+     * <p>Title: longToBytes</p>
      * <p>Description: 将一个长整数转换位字节数组(8个字节)，b[0]存储高位字符，大端 </p>
      * ${tags} 代表长整数的字节数组
      */

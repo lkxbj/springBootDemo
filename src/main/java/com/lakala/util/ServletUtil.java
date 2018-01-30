@@ -15,12 +15,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <p>Title: ${FILE_NAME}</p>
- *
+ * <p>Title: ServletUtil</p>
  * @author lixiaojie lixiaojie@lakala.com
  * @version V1.0
  * @Package com.lakala.util
- * <p>Description: ${todo}</p>
+ * <p>Description: 服务响应状况</p>
  * @date 2018/1/25 10:19
  */
 public class ServletUtil {
@@ -45,7 +44,7 @@ public class ServletUtil {
     }
 
     /**
-     * <p>Title: ${enclosing_method}</p>
+     * <p>Title: createSuccessResponse</p>
      * <p>Description: 生成成功报文</p>
      * ${tags} return
      */

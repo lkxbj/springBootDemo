@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <p>Title: ${FILE_NAME}</p>
+ * <p>Title: Page</p>
  * @author lixiaojie lixiaojie@lakala.com
  * @version V1.0
  * @Package com.lakala.util
@@ -30,7 +30,7 @@ public class Page {
     private List<Map<String, Object>> resultList;
 
     /**
-     * <p>Title: ${enclosing_method}</p>
+     * <p>Title: </p>
      * <p>Description: 分页构造函数</p>
      * @param sql 包含筛选条件的sql，但不包含分页相关约束，如mysql的limit
      * @param currentPage 当前页

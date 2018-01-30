@@ -6,12 +6,11 @@ import com.lakala.util.Page;
 import java.util.Map;
 
 /**
- * <p>Title: ${FILE_NAME}</p>
- *
+ * <p>Title: LearnService</p>
  * @author lixiaojie lixiaojie@lakala.com
  * @version V1.0
  * @Package com.lakala.service
- * <p>Description: ${todo}</p>
+ * <p>Description: 资料业务逻辑接口类</p>
  * @date 2018/1/24 16:04
  */
 public interface LearnService {
