@@ -1,14 +1,13 @@
 package com.lakala.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.lakala.domain.LearnResouce;
+import com.lakala.domain.LearnResource;
 import com.lakala.service.LearnService;
 import com.lakala.util.Page;
 import com.lakala.util.ServletUtil;
 import com.lakala.util.StringUtil;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -60,7 +59,7 @@ public class LearnController {
         map.put("rows",rows);
         map.put("author",author);
         map.put("title",title);
-        Page page1 = learnService.queryLearnResouceList(map);
+        Page page1 = learnService.queryLearnResourceList(map);
         List<Map<String,Object>> list = page1.getResultList();
         JSONObject jsonObject=new JSONObject();
         jsonObject.put("rows",list);
@@ -95,13 +94,14 @@ public class LearnController {
             jsonObject.put("message","地址不能为空");
             jsonObject.put("flag",false);
             ServletUtil.createSuccessResponse(200,jsonObject,response);
+            System.out.println();
             return;
         }
-        LearnResouce learnResouce = new LearnResouce();
-        learnResouce.setAuthor(author);
-        learnResouce.setTitle(title);
-        learnResouce.setUrl(url);
-        int index = learnService.add(learnResouce);
+        LearnResource learnResource = new LearnResource();
+        learnResource.setAuthor(author);
+        learnResource.setTitle(title);
+        learnResource.setUrl(url);
+        int index = learnService.add(learnResource);
         if(index>0){
             jsonObject.put("message","添加成功");
             jsonObject.put("flag",true);
@@ -120,7 +120,7 @@ public class LearnController {
     public void updateLearn(HttpServletRequest request,HttpServletResponse response){
         JSONObject jo = new JSONObject();
         String id = request.getParameter("id");
-        LearnResouce learnResouce = learnService.queryLearnResouceById(Long.valueOf(id));
+        LearnResource learnResource = learnService.queryLearnResourceById(Long.valueOf(id));
         String author = request.getParameter("author");
         String title = request.getParameter("title");
         String url = request.getParameter("url");
@@ -142,10 +142,10 @@ public class LearnController {
             ServletUtil.createSuccessResponse(200,jo,response);
             return;
         }
-        learnResouce.setAuthor(author);
-        learnResouce.setTitle(title);
-        learnResouce.setUrl(url);
-        int index = learnService.update(learnResouce);
+        learnResource.setAuthor(author);
+        learnResource.setTitle(title);
+        learnResource.setUrl(url);
+        int index = learnService.update(learnResource);
         if(index>0){
             jo.put("message","信息修改成功");
             jo.put("flag",true);

@@ -27,7 +27,7 @@ package com.lakala.domain;
 // insert into `learn_resource`(`id`,`author`,`title`,`url`) values (1001,'嘟嘟MD独立博客','Spring Boot干货系列','http://tengj.top/');
 // insert into `learn_resource`(`id`,`author`,`title`,`url`) values (1002,'后端编程嘟','Spring Boot视频教程','http://www.toutiao.com/m1559096720023553/');
 
-public class LearnResouce {
+public class LearnResource {
 
     private Long id;
 
@@ -37,9 +37,9 @@ public class LearnResouce {
 
     private String url;
 
-    public LearnResouce(){}
+    public LearnResource(){}
 
-    public LearnResouce(String author,String title,String url){
+    public LearnResource(String author,String title,String url){
         this.author = author;
         this.title = title;
         this.url = url;

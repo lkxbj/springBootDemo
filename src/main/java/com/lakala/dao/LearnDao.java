@@ -1,6 +1,6 @@
 package com.lakala.dao;
 
-import com.lakala.domain.LearnResouce;
+import com.lakala.domain.LearnResource;
 import com.lakala.util.Page;
 
 import java.util.Map;
@@ -15,9 +15,9 @@ import java.util.Map;
  * @date 2018/1/24 16:26
  */
 public interface LearnDao {
-    Page queryLearnResouceList(Map<String,Object> params);
-    LearnResouce queryLearnResouceById(Long id);
-    int add(LearnResouce learnResouce);
-    int update(LearnResouce learnResouce);
+    Page queryLearnResourceList(Map<String,Object> params);
+    LearnResource queryLearnResourceById(Long id);
+    int add(LearnResource learnResource);
+    int update(LearnResource learnResource);
     int deleteByIds(String ids);
 }

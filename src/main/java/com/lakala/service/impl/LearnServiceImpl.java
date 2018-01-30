@@ -1,7 +1,7 @@
 package com.lakala.service.impl;
 
 import com.lakala.dao.LearnDao;
-import com.lakala.domain.LearnResouce;
+import com.lakala.domain.LearnResource;
 import com.lakala.service.LearnService;
 import com.lakala.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,23 +25,23 @@ public class LearnServiceImpl implements LearnService {
     LearnDao learnDao;
 
     @Override
-    public Page queryLearnResouceList(Map<String, Object> params) {
-        return this.learnDao.queryLearnResouceList(params);
+    public Page queryLearnResourceList(Map<String, Object> params) {
+        return this.learnDao.queryLearnResourceList(params);
     }
 
     @Override
-    public LearnResouce queryLearnResouceById(Long id) {
-        return this.learnDao.queryLearnResouceById(id);
+    public LearnResource queryLearnResourceById(Long id) {
+        return this.learnDao.queryLearnResourceById(id);
     }
 
     @Override
-    public int add(LearnResouce learnResouce) {
-        return this.learnDao.add(learnResouce);
+    public int add(LearnResource learnResource) {
+        return this.learnDao.add(learnResource);
     }
 
     @Override
-    public int update(LearnResouce learnResouce) {
-        return this.learnDao.update(learnResouce);
+    public int update(LearnResource learnResource) {
+        return this.learnDao.update(learnResource);
     }
 
     @Override

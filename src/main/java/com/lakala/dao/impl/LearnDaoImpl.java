@@ -1,7 +1,7 @@
 package com.lakala.dao.impl;
 
 import com.lakala.dao.LearnDao;
-import com.lakala.domain.LearnResouce;
+import com.lakala.domain.LearnResource;
 import com.lakala.util.Page;
 import com.lakala.util.StringUtil;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -27,7 +27,7 @@ public class LearnDaoImpl implements LearnDao{
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public Page queryLearnResouceList(Map<String, Object> params) {
+    public Page queryLearnResourceList(Map<String, Object> params) {
         StringBuffer sb = new StringBuffer();
         sb.append("select * from learn_resource where 1=1");
         if(!StringUtil.isNull((String)params.get("author"))){
@@ -46,23 +46,23 @@ public class LearnDaoImpl implements LearnDao{
      * ${tags} return LearnResouce
      */
     @Override
-    public LearnResouce queryLearnResouceById(Long id) {
-        List<LearnResouce> list = jdbcTemplate.query("select * from learn_resource where id = ?", new Object[]{id}, new BeanPropertyRowMapper(LearnResouce.class));
+    public LearnResource queryLearnResourceById(Long id) {
+        List<LearnResource> list = jdbcTemplate.query("select * from learn_resource where id = ?", new Object[]{id}, new BeanPropertyRowMapper(LearnResource.class));
         if(list!=null&&list.size()>0){
-            LearnResouce learnResouce = list.get(0);
-            return learnResouce;
+            LearnResource learnResource = list.get(0);
+            return learnResource;
         }else {
             return null;
         }
     }
 
     @Override
-    public int add(LearnResouce learnResource) {
+    public int add(LearnResource learnResource) {
         return jdbcTemplate.update("insert into learn_resource(author, title,url) values(?, ?, ?)",learnResource.getAuthor(),learnResource.getTitle(),learnResource.getUrl());
     }
 
     @Override
-    public int update(LearnResouce learnResource) {
+    public int update(LearnResource learnResource) {
         return jdbcTemplate.update("update learn_resource set author=?,title=?,url=? where id = ?",new Object[]{learnResource.getAuthor(),learnResource.getTitle(),learnResource.getUrl(),learnResource.getId()});
     }
 
